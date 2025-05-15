@@ -12,5 +12,6 @@ WORKDIR /app
 COPY --from=build /app/target/*.jar ./
 RUN ls -la
 
+USER 1000
 EXPOSE 80
 CMD ["sh", "-c", "java -jar $(ls *.jar)"] 
